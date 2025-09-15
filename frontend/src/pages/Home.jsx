@@ -1,6 +1,10 @@
+import Sidebar from "../components/Sidebar";
+
 function Home() {
     return (
-        <h1>Home page</h1>
+        <div>
+            <Sidebar />
+        </div>
     )
 }
 
