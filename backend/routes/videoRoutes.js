@@ -1,5 +1,7 @@
 import express from "express";
 import Video from "../models/video.js";
+import Channel from "../models/Channel.js";
+import { protect } from "../middleware/auth.js";
 
 const router = express.Router();
 
@@ -19,5 +21,33 @@ router.get("/:id", async (req, res) => {
   res.json(video);
 });
 
+// Upload video
+router.post("/", protect, async (req, res) => {
+  const { title, videoUrl, thumbnailUrl, description, category, channelId } = req.body;
+  const video = await Video.create({
+    title,
+    videoUrl,
+    thumbnailUrl,
+    description,
+    category,
+    channelId,
+    uploader: req.user
+  });
+
+  await Channel.findByIdAndUpdate(channelId, { $push: { videos: video._id } });
+  res.json(video);
+});
+
+// Update video
+router.put("/:id", protect, async (req, res) => {
+  const updated = await Video.findByIdAndUpdate(req.params.id, req.body, { new: true });
+  res.json(updated);
+});
+
+// Delete video
+router.delete("/:id", protect, async (req, res) => {
+  await Video.findByIdAndDelete(req.params.id);
+  res.json({ message: "Video deleted" });
+});
 
 export default router;
