@@ -3,6 +3,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./config/db.js";
 
+import videoRoutes from "./routes/videoRoutes.js";
+
 dotenv.config();
 connectDB();
 
@@ -12,6 +14,8 @@ app.use(cors({
   credentials: true,
 }));
 app.use(express.json());
+
+app.use("/api/videos", videoRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
