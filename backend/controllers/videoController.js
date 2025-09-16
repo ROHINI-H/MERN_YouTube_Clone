@@ -1,4 +1,4 @@
-import Video from "../models/video.js";
+import Video from "../models/Video.js";
 
 export const listVideos = async (req,res)=>{
   const { q, category } = req.query;
