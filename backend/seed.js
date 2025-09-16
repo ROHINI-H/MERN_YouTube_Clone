@@ -36,7 +36,7 @@ const seedData = async () => {
         description: "Daily vlogs and lifestyle content",
       },
       {
-        channelName: "ShamyaShamya Reviews",
+        channelName: "Shamya Reviews",
         owner: users[2]._id,
         description: "Product reviews and unboxings",
       },
