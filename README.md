@@ -77,7 +77,3 @@ Special thanks to Internshala trainings for providing the training to learn reac
 
 ## 🚀Connect with me
 If you'd like to learn more about my work or connect professionally, you can find me on LinkedIn: www.linkedin.com/in/rohini-h
-
-
-  
-details.
