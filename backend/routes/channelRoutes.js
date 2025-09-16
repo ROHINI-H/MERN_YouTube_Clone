@@ -1,11 +1,11 @@
 import express from "express";
 import Channel from "../models/Channel.js";
-import { auth } from "../middleware/auth.js";
+import { protect } from "../middleware/auth.js";
 
 const router = express.Router();
 
 // Create Channel
-router.post("/", auth, async (req, res) => {
+router.post("/", protect, async (req, res) => {
   const { channelName, description } = req.body;
   const channel = await Channel.create({
     channelName,
