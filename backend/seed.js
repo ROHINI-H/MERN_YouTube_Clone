@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import connectDB from "./config/db.js";
 import User from "./models/User.js";
 import Channel from "./models/Channel.js";
-import Video from "./models/Video.js";
+import Video from "./models/video.js";
 import Comment from "./models/Comment.js";
 
 dotenv.config();
