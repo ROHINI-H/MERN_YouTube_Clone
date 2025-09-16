@@ -17,7 +17,7 @@ function Sidebar({ isOpen, collapsed, onClose }) {
 
       {/* Sidebar */}
       <aside
-        className={`bg-white border-r z-40 flex flex-col transition-all duration-300
+        className={`bg-white z-40 flex flex-col transition-all duration-300
           fixed md:static top-0 left-0 h-full
           ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
           ${collapsed ? "w-20" : "w-56"}
@@ -36,7 +36,7 @@ function Sidebar({ isOpen, collapsed, onClose }) {
           </li>
           <li>
             <Link
-              to="/shorts"
+              to="/"
               className="px-2 py-3 rounded-xl flex items-center hover:bg-zinc-200"
               onClick={onClose}
             >
@@ -46,7 +46,7 @@ function Sidebar({ isOpen, collapsed, onClose }) {
           </li>
           <li>
             <Link
-              to="/subscriptions"
+              to="/"
               className="px-2 py-3 rounded-xl flex items-center hover:bg-zinc-200"
               onClick={onClose}
             >
@@ -66,7 +66,7 @@ function Sidebar({ isOpen, collapsed, onClose }) {
           </li>
           <li>
             <Link
-              to="/downloads"
+              to="/"
               className="px-2 py-3 rounded-xl flex items-center hover:bg-zinc-200"
               onClick={onClose}
             >

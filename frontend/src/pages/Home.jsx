@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../utils/api";
 import VideoCard from "../components/VideoCard";
-import Sidebar from "../components/Sidebar";
 
 function Home({ searchQuery }) {
   const [videos, setVideos] = useState([]);
@@ -17,13 +16,10 @@ function Home({ searchQuery }) {
     : videos;
 
   return (
-    <div className="flex">
-      <Sidebar />
-      <main className="flex-1 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {filtered.map((video) => (
-          <VideoCard key={video._id} video={video} />
-        ))}
-      </main>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {filtered.map((video) => (
+        <VideoCard key={video._id} video={video} />
+      ))}
     </div>
   );
 }

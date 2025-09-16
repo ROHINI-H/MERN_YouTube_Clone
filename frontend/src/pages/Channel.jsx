@@ -102,7 +102,6 @@ function Channel() {
 
   return (
     <div className="flex bg-gray-100 min-h-screen">
-      <Sidebar />
       <div className="flex-1 relative">
         {message && <p className="text-green-600 p-2">{message}</p>}
 
