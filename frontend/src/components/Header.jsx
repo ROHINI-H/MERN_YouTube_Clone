@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Context/AuthContext";
 
-function Header({ onToggleSidebar, onCollapseSidebar }) {
+function Header({ onToggleSidebar, onCollapseSidebar, onSearch }) {
   const { user, logout } = useContext(AuthContext);
     const [query, setQuery] = useState("");
   
@@ -15,7 +15,7 @@ function Header({ onToggleSidebar, onCollapseSidebar }) {
     };
     
   return (
-    <header className="flex items-center justify-between px-4 py-3 bg-white shadow">
+    <header className="flex items-center justify-between px-4 py-3 bg-white">
       {/* Left: Hamburger + Logo */}
       <div className="flex items-center space-x-3">
         <button
@@ -33,7 +33,7 @@ function Header({ onToggleSidebar, onCollapseSidebar }) {
         <div className="flex items-center">
           <FaYoutube size={28} className="text-red-500" />
           <Link to="/" className="ml-1 text-xl font-bold hidden sm:block">
-            YouTube Clone
+            YouTube
           </Link>
         </div>
       </div>
@@ -57,8 +57,8 @@ function Header({ onToggleSidebar, onCollapseSidebar }) {
         <TbBell size={28} />
         {user ? (
           <div className="flex items-center gap-2">
-            <span>{user.username}</span>
-            <button onClick={logout} className="bg-gray-700 px-2 py-1 rounded">
+            <Link to='/channel'>{user.username}</Link>
+            <button onClick={logout} className="bg-red-600 text-blue-50 mx-2 px-2 py-1 rounded-2xl cursor-pointer">
               Logout
             </button>
           </div>
