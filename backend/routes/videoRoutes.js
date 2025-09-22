@@ -1,5 +1,5 @@
 import express from "express";
-import Video from "../models/Video.js"
+import Video from "../models/video.js"
 import Channel from "../models/Channel.js";
 import { protect } from "../middleware/auth.js";
 
